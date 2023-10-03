@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { UserList2 } from './UserList2';
+import { log } from 'console';
 
 export type AddressType = {
   street: string;
@@ -47,7 +48,10 @@ export const HW2 = () => {
   let [currentUsers, setCurrentUsers] = useState<UsersObjectType>(users);
 
   const filterUsers = () => {
+    
     const filteredUsers = currentUsers.myFriends.filter(f => f.address.city === 'Los Angeles') //'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES';
+    console.log(filteredUsers);
+    
     setCurrentUsers({ myFriends: filteredUsers });
   };
 
